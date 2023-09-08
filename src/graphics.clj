@@ -20,7 +20,7 @@
 
 
 (defn setup []
-  (q/frame-rate 256000)                    ;; Set framerate to 1 FPS
+  (q/frame-rate 2560000)                    ;; Set framerate to 1 FPS
   (q/background 200))                 ;; Set the background colour to
                                       ;; a nice shade of grey.
 (defn draw []
