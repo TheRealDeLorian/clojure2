@@ -20,7 +20,7 @@
 
 
 (defn setup []
-  (q/frame-rate 2560000)                    ;; Set framerate to 1 FPS
+  (q/frame-rate 1)                    ;; Set framerate to 1 FPS
   (q/background 200))                 ;; Set the background colour to
                                       ;; a nice shade of grey.
 (defn draw []
@@ -31,13 +31,12 @@
   (let [diam (q/random 100)             ;; Set the diameter to a value between 0 and 100
         x    (q/random (q/width))       ;; Set the x coord randomly within the sketch
         y    (q/random (q/height))]     ;; Set the y coord randomly within the sketch
-    (q/ellipse x y diam diam)))         ;; Draw a circle at x y with the correct diameter
+    (q/rect x y x y)))         ;; Draw a circle at x y with the correct diameter
 
-(defn draw-stuff [opts] 
-(q/defsketch example                  ;; Define a new sketch named example
-  :title "Oh so many gray circles"    ;; Set the title of the sketch
-  :settings #(q/smooth 2)             ;; Turn on anti-aliasing
-  :setup setup                        ;; Specify the setup fn
-  :draw draw                          ;; Specify the draw fn
-  :size [323 200])
-  )                   ;; You struggle to beat the golden ratio
+(defn draw-stuff [opts]
+  (q/defsketch example                  ;; Define a new sketch named example
+    :title "Oh so many gray rectangles"    ;; Set the title of the sketch
+    :settings #(q/smooth 2)             ;; Turn on anti-aliasing
+    :setup setup                        ;; Specify the setup fn
+    :draw draw                          ;; Specify the draw fn
+    :size [323 200]))                   ;; You struggle to beat the golden ratio
